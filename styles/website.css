@@ -1,0 +1,24 @@
+.code-line-highlight {
+	color: #ef5ba1;
+}
+
+.image {
+	text-align: center;
+}
+
+.rgram img {
+	max-width: 200px;
+	max-height: 200px;
+}
+
+.arrow img {
+	height: 5em;
+}
+
+inverse-list {
+	float: left;
+}
+
+alias-list {
+	float: right;
+}

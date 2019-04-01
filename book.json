@@ -1,0 +1,10 @@
+{
+    "title": "代码健康小贴士",
+    "language": "zh-hans",
+    "root": "./source",
+    "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css"
+    },
+    "plugins": ["-highlight", "code-highlighter"]
+}
