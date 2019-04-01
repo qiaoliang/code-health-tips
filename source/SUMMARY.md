@@ -16,3 +16,5 @@
 
 * [使用注释，还是不用呢?](./google/01-07to-comment-or-not-to-comment.md)
 
+* [Code Reviews有太多的注释?](./google/01-08too-many-comments-on-cr.md)
+

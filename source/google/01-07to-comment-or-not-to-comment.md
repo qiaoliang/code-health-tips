@@ -74,7 +74,7 @@
 
    `@SuppressWarnings("unchecked") // The cast is safe because…`  
 
-另一方面，**避免注释只是重复了代码表达的内容** 。非常讨厌，如下所示:
+另一方面，**避免注释只是重复了代码表达的内容** 。这种做法令人生厌，如下所示:
 
   <table>
     <tr>
