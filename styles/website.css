@@ -2,6 +2,16 @@
 	color: #ef5ba1;
 }
 
+/* Custom table class used in some posts */
+.my-bordered-table {
+border-collapse: collapse;
+border: 1px solid black;
+}
+.my-bordered-table th, .my-bordered-table td {
+border: 1px solid black;
+padding: 5px;
+}
+
 .image {
 	text-align: center;
 }

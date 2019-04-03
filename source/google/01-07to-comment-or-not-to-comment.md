@@ -9,7 +9,7 @@
   <table>
     <tr>
       <td width="50%" bgcolor=LightPink>
-        // Subtract discount from price.<br>
+        // Subtract discount from price.
         finalPrice = (numItems * itemPrice) - min(5, numItems) * itemPrice * 0.1;
       </td>
       <td bgcolor=DarkSeaGreen>
@@ -59,27 +59,27 @@
 
 **有一些情况下，注释是有益的:**
 
-- 展示你的意图：解释为什么写这段代码，而不是它在做什么。 
+- 展示你的意图：解释为什么写这段代码，而不是它在做什么。
 
   `// Compute once because it’s expensive. `
 
 - 保护未来那个善意的想修改你代码的人，以免它错误地“修复”了你的代码。
 
-  ` // Create a new Foo instance because Foo is not thread-safe.`  
+  ` // Create a new Foo instance because Foo is not thread-safe.`
 
 - 声明式:代码审查期间出现的问题或代码的读者可能有的问题。
   ` // Note that order matters because…`
 
 - 如果看起来你写了一段违反软件工程实践的糟糕代码，那就解释一下你的理由。
 
-   `@SuppressWarnings("unchecked") // The cast is safe because…`  
+   `@SuppressWarnings("unchecked") // The cast is safe because…`
 
 另一方面，**避免注释只是重复了代码表达的内容** 。这种做法令人生厌，如下所示:
 
   <table>
     <tr>
       <td bgcolor=LightPink width ="50%">
-        // Get all users.<br/> 
+        // Get all users.<br/>
         userService.getAllUsers();
       </td>
       <td bgcolor=LightPink >

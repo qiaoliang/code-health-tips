@@ -3,13 +3,13 @@
 软件开发的大部分成本是维护成本。**减少维护成本的一名方法是只在你在需要它时，才实现它**。也就是所谓的* ***“你不需要它（You Aren't Gonna Need It）”*** **(缩写为YAGNI)设计原则。** 如何定位那些不必要的代码？跟着你的鼻子走!
 
 *代码坏味道*是指一种代码模式，通常会暗示着某种设计缺陷。例如，"创建了一个基类或者接口，但却只有一个子类”，这可能意味着写代码的人推测在后续的开发中有可能需要写更多的子类。正确的做法是，**实践增量式的开发与设计 **：直到真正需要第二个子类时，再提取出一个父类或接口。
-
 **下面的C++ 代码就有YAGNI坏味道**:
 
+c++
 ```c++
 class Mammal { ...
-  virtual Status Sleep(bool hibernate) = 0;
-};
+           virtual Status Sleep(bool hibernate) = 0;
+       }; 
 class Human : public Mammal { ...
   virtual Status Sleep(bool hibernate) {
     age += hibernate ? kSevenMonths : kSevenHours;
@@ -18,9 +18,10 @@ class Human : public Mammal { ...
 };
 ```
 
+
 当只需要一个类时，使用父子类只是增加了维护者的理解、文档和测试这两个类的负担。在上面的代码片断中， 我们要处理的情况是，即使所有的调用者传递的参数是*false*时，你要也关心hibernate是true的时候的用例；另外，当Sleep函数返回一个error时，也需要处理，尽管根本不会发生这种情况。这就导致根本不可能被执行的无用代码。**请消除这些坏味道，简化代码**:
 
-```java
+```c++
 class Human { ...
   void Sleep() { age += kSevenHours; }
 };
