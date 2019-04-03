@@ -1,0 +1,32 @@
+{
+  "name": "code-health-tips",
+  "version": "0.1.0",
+  "description": "Chinese translation of Code Health Tips from Google Testing Blog.",
+  "main": "SUMMARY.md",
+  "keywords": [
+    "code-health-tips",
+    "first-edition",
+    "chinese",
+    "translation"
+  ],
+  "scripts": {
+    "serve": "gitbook serve",
+    "init": "gitbook init",
+    "install": "gitbook install",
+    "pdf": "gitbook pdf && open book.pdf"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2",
+    "husky": "^1.2.1",
+    "svgexport": "^0.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:qiaoliang/code-health-tips.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "gitbook-plugin-code-highlighter": "^1.0.7",
+    "gitbook-plugin-image-div": "0.0.4"
+  }
+}
