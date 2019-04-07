@@ -15,16 +15,11 @@
 * [TotT](TotT/README.md)
 
   * [在测试中检查服务调用](TotT/02-01exercise-service-call.md)
-
   * [密闭服务器](TotT/02-02Hermetic-Servers.md)
-
   * [使用冒充者，让测试变得更快更容易](TotT/02-03fake-your-way-to.md)
-
   * [避免写出不稳定的测试](TotT/02-04avoiding-flakey-tests.md)
-
   * [只验证相关的方法参数](TotT/02-05verify-relevant.md)
-
   * [测试应该聚焦](TotT/02-06tests-should-focus.md)
-
   * [清晰创建测试数据](TotT/02-07cleanly-create-test-data.md)
+  * [只验证有状态变化的方法调用](TotT/02-08only-verify-state-changing.md)
 
