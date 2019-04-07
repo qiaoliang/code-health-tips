@@ -16,6 +16,7 @@
 
   * [在测试中检查服务调用](TotT/02-01exercise-service-call.md)
   * [密闭服务器](TotT/02-02Hermetic-Servers.md)
-  * [冒充对象](TotT/02-03fake-your-way-to.md)
-  * [避免Flakey Tests](02-04avoiding-flakey-tests.md)
+  * [使用冒充者，让测试变得更快更容易](TotT/02-03fake-your-way-to.md)
+  * [避免写出不稳定的测试](TotT/02-04avoiding-flakey-tests.md)
+  * [只验证相关的方法参数](TotT/02-05verify-relevant.md)
 
