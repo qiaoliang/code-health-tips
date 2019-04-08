@@ -22,4 +22,6 @@
   * [测试应该聚焦](TotT/02-06tests-should-focus.md)
   * [清晰创建测试数据](TotT/02-07cleanly-create-test-data.md)
   * [只验证有状态变化的方法调用](TotT/02-08only-verify-state-changing.md)
+  * [确保原因与影响清晰](TotT/02-09keep-cause-clear.md)
+  * [[What Makes a Good End-to-End Test?](TotT/what-makes-good-end.md)]
 
