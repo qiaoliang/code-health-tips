@@ -23,5 +23,4 @@
   * [只验证有状态变化的方法调用](TotT/02-08only-verify-state-changing.md)
   * [确保原因与影响清晰](TotT/02-09keep-cause-clear.md)
   * [测试替身对象](TotT/02-10stub-faked-mock.md)
-  * [[What Makes a Good End-to-End Test?](TotT/02-11what-makes-good-end.md)]
-
+  * [写好端到端的自动化测试](TotT/02-11what-makes-good-end.md)

@@ -1,24 +1,20 @@
-## 好的端到端测试
+## 写好端到端的自动化测试
 
-端到端测试就是用来An end-to-end test tests your entire system from one end to the other, treating everything in between as a black box. **End-to-end tests can catch bugs that manifest across your entire system**. In addition to unit and integration tests, they are a critical part of a balanced testing diet, providing confidence about the health of your system in a near production state. Unfortunately, end-to-end tests are **slower, more flaky, and more expensive to maintain** than unit or integration tests. Consider carefully whether an end-to-end test is warranted, and if so, how best to write one.
+端到端测试就是用来测试整个系统的，即从给这个系统输入信息开始，到获取返回的输出信息，将它看成一个黑盒。**端到端测试可以捕获整个系统中出现的缺陷**。除了单元测试和集成测试之外，它是均衡测试谱系的重要组成部分，在类生产状态下为您的系统健康提供信心。不幸的是，与单元测试和集成测试相比，端到端测试运行得**更慢，更不稳定，而且维护成本更高**。所以每写一个端到端测试用例，都要思考是否有必要。如果答案是肯定的，那么，又如何编写一个好的端到端测试呢？
 
-Let's consider how an end-to-end test might work for the following "login flow":
+让我们以下面的登录流程为例，考虑一下端到端的测试是如何工作的：
 
 ![端到端系统](../../images/TotT-02-11E2E-test.png)
 
-In order to be cost effective, an end-to-end test should 
+为了节约成本，端到端测试应该关注系统中无法使用较小型的自动化测试可靠评估的那些方面，例如资源分配、并发性问题和API兼容性等，具体的说就是：
 
-focus on aspects of your system that cannot be reliably evaluated with smaller tests
+- **对于每个重要的用例（use Case），应该有一个对应的端到端测试。**这应该包括对每个重要类型的错误的一个测试，其目标是保持低数量的端到端测试数量。
+- **每个季度都要至少准备出一个星期的时间，保证端到端测试的稳定**，以便一旦面对运行慢、不稳定的依赖或者小的UI变更等问题时，不至于手忙脚乱。
+- **聚焦于验证整体的系统行为，而不是具体的实现细节**；例如，当测试登录行为时，应该验证整个流程是否成功，且应该与那些可能会频繁更改的确切消息显示或可视化布局相分离。
+- 通过提供一个概览级别的日志文件，记录常见的测试失败模型（modes），以及保存相关的系统状态信息（例如截图，数据库快照等），**让端到端的测试更容易调试**。
 
-, such as resource allocation, concurrency issues and API compatibility. More specifically:
+端到端测试还附带一些重要注意事项：
 
-- **For each important use case, there should be one corresponding end-to-end test.** This should include one test for each important class of error. The goal is the keep your total end-to-end count low.
-- Be prepared to **allocate at least one week a quarter per test to keep your end-to-end tests stable** in the face of issues like slow and flaky dependencies or minor UI changes.
-- **Focus your efforts on verifying overall system behavior instead of specific implementation details**; for example, when testing login behavior, verify that the process succeeds independent of the exact messages or visual layouts, which may change frequently.
-- **Make your end-to-end test easy to debug** by providing an overview-level log file, documenting common test failure modes, and preserving all relevant system state information (e.g.: screenshots, database snapshots, etc.).
-
-End-to-end tests also come with some important caveats:
-
-- System components that are owned by other teams may change unexpectedly, and break your tests. This increases overall maintenance cost, but can highlight incompatible changes
-- **It may be more difficult to make an end-to-end test fully hermetic**; leftover test data may alter future tests and/or production systems. Where possible keep your test data ephemeral.
-- An end-to-end test often necessitates multiple test doubles ([fakes or stubs](https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html)) for underlying dependencies; they can, however, have a high maintenance burden as they drift from the real implementations over time.
+- 由其它团队维护的系统组件可能会在不知情的情况下被改变，从而让你的测试失败。这会增加整体维护成本，但同时也就突出了那些不兼容的变更。
+- **让端到端测试完全做到封闭性可能会更难一些**；残剩的测试数据可能会改变将来的测试结果和/或生产系统。所以，只要可能，尽量保证测试数据的生命短暂性。
+- 一个端到端的测试常常需要多种底层依赖项的测试替身对象 ([fakes or stubs](https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html)) ；它们可能会产生很高的维护成本，因为随着时间的推移，它会与真实的系统实现之间产生差异。
