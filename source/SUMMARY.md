@@ -24,3 +24,7 @@
   * [确保原因与影响清晰](TotT/02-09keep-cause-clear.md)
   * [测试替身对象](TotT/02-10stub-faked-mock.md)
   * [写好端到端的自动化测试](TotT/02-11what-makes-good-end.md)
+  * [像变更检测器一样的测试代码，是有害的！](TotT/02-14-prefer-testing-public_apis.md)
+  * [测试行为（Behaviors），不要测试方法(Methods）](TotT/02-13test-behaviors.md)
+  * [测试公有API（Public APIs）而不是测试那些细节实现类](TotT/02-14-prefer-testing-public_apis.md)
+

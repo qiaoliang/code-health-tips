@@ -1,4 +1,4 @@
-## 测试公有API（Public APIs）而不是测试实现的细节
+## 测试公有API（Public APIs）而不是测试那些细节实现类
 
 (https://testing.googleblog.com/2015/01/testing-on-toilet-prefer-testing-public.html)
 
