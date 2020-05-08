@@ -9,11 +9,14 @@
   <table>
     <tr>
       <td width="50%" bgcolor=LightPink>
-        // Subtract discount from price.
-        finalPrice = (numItems * itemPrice) - min(5, numItems) * itemPrice * 0.1;
+        // Subtract discount from price.<br/>
+        finalPrice = (numItems * itemPrice) <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;- min(5, numItems) * itemPrice * 0.1;
       </td>
       <td bgcolor=DarkSeaGreen>
-        filterOffensiveWords(words);
+        price = numItems * itemPrice;<br/>
+        discount = min(5, numItems) * itemPrice * 0.1; <br/>
+        finalPrice = price - discount;<br/>
       </td>
     </tr>
   </table>

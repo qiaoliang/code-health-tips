@@ -1,49 +1,59 @@
-## Reduce Nesting, Reduce Complexity
+## 减少嵌套, 减少复杂性
 
-嵌套过深的代码对可读性有害，而且容易出错。 请在下面两个版本的代码中**试着找一找bug**：
+嵌套过深的代码对可读性有害，而且容易出错。
+
+请在下面两个版本的代码中**试着找一找bug**：
 
 <table class="my-bordered-table">
   <tbody>
 <tr width=‘50%’>
       <td style="text-align: center;"><em>嵌套太多的代码</em></td>
-      <td style="text-align: center;"><em>较少嵌套的代码</em></td>
 </tr>
 <tr><td bgcolor=LightPink>
-<pre >response = server.Call(request)
+<pre >
+response = server.Call(request)
 if response.GetStatus() == RPC.OK:
-  if response.GetAuthorizedUser():
-    if response.GetEnc() == 'utf-8':
-      if response.GetRows():
-        vals = [ParseRow(r) for r in 
-                response.GetRows()]
-        avg = sum(vals) / len(vals)
-        return avg, vals
-      else:
-        raise EmptyError()
+    if response.GetAuthorizedUser():
+        if response.GetEnc() == 'utf-8':
+            if response.GetRows():
+                vals = [ParseRow(r) for r in response.GetRows()]
+                avg = sum(vals) / len(vals)
+                return avg, vals
+            else:
+                raise EmptyError()
+        else:
+            raise AuthError('unauthorized')
     else:
-      raise AuthError('unauthorized')
-  else:
-    raise ValueError('wrong encoding')
+        raise ValueError('wrong encoding')
 else:
-  raise RpcError(response.GetStatus())</pre>
+    raise RpcError(response.GetStatus())</pre>
 </td>
+  </tr>
+</tbody></table>
+
+<table class="my-bordered-table">
+  <tbody>
+<tr width=‘50%’>
+      <td style="text-align: center;"><em>较少嵌套的代码</em></td>
+</tr>
+<tr>
     <td style="background-color: #d9ead3;"><pre style="background-color: #d9ead3; border: 0px; color: black;">
 response = server.Call(request)
 if response.GetStatus() != RPC.OK:
-  raise RpcError(response.GetStatus())
+    raise RpcError(response.GetStatus())
 if not response.GetAuthorizedUser():
-  raise ValueError('wrong encoding')
+    raise ValueError('wrong encoding')
 if response.GetEnc() != 'utf-8':
-  raise AuthError('unauthorized')
+    raise AuthError('unauthorized')
 if not response.GetRows():
-  raise EmptyError()
-vals = [ParseRow(r) for r in 
-        response.GetRows()]
+    raise EmptyError()
+vals = [ParseRow(r) for r in response.GetRows()]
 avg = sum(vals) / len(vals)
 return avg, vals</pre>
 </td>
   </tr>
 </tbody></table>
+
 
 答案："wrong encoding"和"unauthorized" 这两个Error Message写反了。**在重构后的版本中，这个bug更容易被发现，因为代码中，直接进行检查后就可以处理Error了。**
 
