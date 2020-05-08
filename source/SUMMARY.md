@@ -10,7 +10,8 @@
   * [消除YAGNI坏味道](./google/01-06eliminate-yagni-smells.md)
   * [使用注释，还是不用呢?](./google/01-07to-comment-or-not-to-comment.md)
   * [Code Reviews有太多的注释?](./google/01-08too-many-comments-on-cr.md)
-  * [Reduce Nesting, Reduce Complexity](./google/01-09reduce-nesting-reduce.md)
+  * [减少嵌套，减少复杂性](./google/01-09reduce-nesting-reduce.md)
+  * [互相尊重的CR，才是有用的CR](./google/01-10respectful-reviews-useful.md)
 
 * [TotT](TotT/README.md)
   * [在测试中检查服务调用](TotT/02-01exercise-service-call.md)
