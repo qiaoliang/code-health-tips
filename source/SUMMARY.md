@@ -29,6 +29,6 @@
   * [测试行为（Behaviors），不要测试方法(Methods)-pub](TotT/02-13test-behaviors.md)
   * [测试公有API（Public APIs）而不是测试那些细节实现类-pub](TotT/02-14-prefer-testing-public_apis.md)
   * [使用描述性的测试名称-pub](TotT/02-15-writing-descriptive-test-name.md)
-  * [Tests Too DRY? Make Them DAMP!]((TotT/02-16-tests-too-dry-make.md))
-  * [Don't Put Logic in Tests]((TotT/02-17-dont-put-logic-in.md))
+  * [Tests Too DRY? Make Them DAMP!](TotT/02-16-tests-too-dry-make.md)
+  * [Don't Put Logic in Tests](TotT/02-17-dont-put-logic-in.md)
 
